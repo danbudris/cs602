@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Chocolate World</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="./shopping.js"></script>
+        <style>
+            #main {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 50%;
+                border: 1px solid black; 
+                padding: 1%;
+            }
+
+            .itemBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+                border: 1px solid black;
+                margin: 1%;
+                padding: 1%;
+            }
+
+            button {
+                width: auto; 
+                margin: 2%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                    <h1> WELCOME TO CHOCOLATE WORLD! </h1>
+            </div>
+            <div class="itemBox">
+                <div id="item1"></div> 
+                <div id="item1price"></div>
+                <input id="item1_input" type="number" min="0" value="0" oninput="this.value = Math.abs(this.value)">
+            </div>
+            <div class="itemBox">
+                <div id="item2"></div>
+                <div id="item2price"></div>
+                <input id="item2_input" type="number" min="0" value="0" oninput="this.value = Math.abs(this.value)">
+            </div>
+            <div class="itemBox">
+                <div id="item3"></div>
+                <div id="item3price"></div>
+                <input id="item3_input" type="number" min="0" value="0" oninput="this.value = Math.abs(this.value)">
+            </div>
+            <div class="itemBox">
+                <div id="item4"></div>
+                <div id="item4price"></div>
+                <input id="item4_input" type="number" min="0" value="0" oninput="this.value = Math.abs(this.value)">
+            </div>
+            <div class="itemBox">    
+                <div id="item5"></div>
+                <div id="item5price"></div>
+                <input id="item5_input" type="number" min="0" value="0" oninput="this.value = Math.abs(this.value)">
+            </div>
+            <div class="itemBox">
+                <button id="addToCart"> Add to Cart </button>
+                <button id="checkout"> Go To Cart </button>
+            </div>
+            <div id="errors"></div>
+        </div>
+    </body>
+</html>

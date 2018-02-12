@@ -1,0 +1,20 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "description": "CS 602 Spring 2018 HW 2",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "session-file-store": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

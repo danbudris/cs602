@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Cart</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="./cart.js"></script>
+
+        <style>
+            html {
+                height: 100%;
+                font-size: 100%;
+            }
+
+            .grid {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:  center;
+                padding: 2%;
+            }
+
+            button {
+                cursor: pointer;
+                margin: 1%;
+            }
+
+            .main {
+                border: .25px solid black;
+                width: 50%;
+                padding: 2%;
+                margin: 2%;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .cartInfo{
+                padding: 2%;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body class="grid">
+        <div class="main grid">
+            <h1> Let's buy some chocolate! </h1>
+            <div id="menu_bar">
+            </div>
+            <div class="main">
+                <div class="grid"> 
+                    <div class="cartInfo"> Items </div>
+                    <div id="cartInfo"> </div>
+                    <button id="updateCart" class="cartInfo"> Update Cart </button>
+                </div>
+            </div>
+            <div class="main" id="main">
+                <div class="grid">
+                    <div class="cartInfo" id="orderPreTotal"></div>
+                    <div class="cartInfo" id="orderWeight"></div>
+                    <div class="cartInfo" id="orderShipping"></div>
+                    <div class="cartInfo" id="orderTotal"></div>
+                    <button class="cartInfo" id="checkout">Checkout</button>
+                </div>
+            </div>
+            <div>
+                <button id="continueShopping">Continue Shopping</button>
+            </div>
+        </div>
+    </body>
+</html>

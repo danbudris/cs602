@@ -1,0 +1,44 @@
+{
+    "Inventory":{
+        "item1":{
+            "itemid": 1,
+            "itemName": "85% Dark Chocolate Bar" ,
+            "description": "A large, midnight-black bar of bitter chocolate",
+            "price": 4.99,
+            "quantityInStock": 100,
+            "weight": 0.3
+        },
+        "item2":{
+            "itemid": 2,
+            "itemName": "50% Dark Chocolate Bar",
+            "description": "A large, brown bar of semi-sweet chocolate",
+            "price": 4.99,
+            "quantityInStock": 200,
+            "weight": 0.3
+        },
+        "item3":{
+            "itemid": 3,
+            "itemName": "Milk Chocolate Bar",
+            "description": "A golden brown bar of very sweet chocolate",
+            "price": 3.99,
+            "quantityInStock": 200,
+            "weight": 0.3
+        },
+        "item4":{
+            "itemid": 4,
+            "itemName": "Chocolate Drop",
+            "description": "A small milk chocolate drop",
+            "price": 1.00,
+            "quantityInStock": 300,
+            "weight": 0.1
+        },
+        "item5":{
+            "itemid": 5,
+            "itemName": "Chocolate Swan",
+            "description": "A life-sized sculpture of a Black Swan carved from the finest dark chocolate",
+            "price": 350.99,
+            "quantityInStock": 2,
+            "weight": 15
+        } 
+    }
+}
