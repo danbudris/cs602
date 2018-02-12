@@ -108,7 +108,7 @@ $(document).ready(()=>{
             if (data['failedToPurchase']){
                 alert("Failed to Purchase the following items: \n"+ errors +"\nNot enough in stock!");
             };
-            window.location.reload(true);
+            window.location.href = './Final.html';
         });
     });
 
