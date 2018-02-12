@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Lab 2</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="text_field"><input id="sql_input"></div>
+        <button id="submit_button">SUBMIT</button>
+    </body>
+</html>
+
+<script type="application/javascript">
+
+$(document).ready(()=>{
+    $("#submit_button").click(()=>{
+        let toSend = $("sql_input").val()
+        $.ajax({
+            type: 'post',
+            data: toSend,
+            url: "127.0.0.1:8080/sqlcheck/main.php"
+        })
+    });
+});
+
+</script>
