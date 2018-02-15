@@ -1,0 +1,30 @@
+{
+  "name": "cs602_homework_2",
+  "version": "1.0.0",
+  "description": "homework 2 for CS602, Server Side Web Development",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "session-file-store": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danbudris/cs602/tree/master/hw2"
+  },
+  "keywords": [
+    "node",
+    "cookie",
+    "session",
+    "chocolate"
+  ],
+  "author": "Dan Budris dbudris@bu.edu",
+  "license": "ISC"
+}
