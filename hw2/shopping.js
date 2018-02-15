@@ -62,7 +62,7 @@ $(document).ready(()=>{
         };
     
         $.post("http://localhost:3030/saveCart",order,(data)=>{
-            console.log(data['failedToPurchase']);
+            console.log(data['failedToAddToCart!']);
             let errors = data['failedToPurchase'];
             let success = data['purchased'];
             if (data['failedToPurchase']){

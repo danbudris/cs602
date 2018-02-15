@@ -1,10 +1,23 @@
-## CS 602 Spring 2018 HW 2: Session Persistence
-# Dan Budris <Dbudris@bu.edu>
+## Chocolate Store Basic Shopping Cart: Homework Two
+Dan Budris
 
-App.js contains the Express.js backend, which runs on port 3030.  The `Inventory.json` file contains the inventory; this is loaded into memory at run time and changes to it are done in-memory for the duration of the app.  The cart information in a custom field in the session cookie.  As a customers quantities are updated, they are only updated in the session cookie; once they check out, the session cookie quantities are subtracted from the inventory and the cookie is cleared.
+dbudris@bu.edu
 
-Cart.html and Cart.js contain the javascript, html and css for the cart page.  This page displays the current quantities in the cart, allows for modifications, and allows the user to check out.
+CS 602, Server Side Web Development, Spring 2018
 
-Shopping.html and Shopping.js contain the javascript, html and css for the shopping page.  This page displays the inventory and allows the customer to add items to their cart.
 
-Final.html contains the html and css for a final 'thank you' page to be displayed on checkout. 
+### Structure
+This application is composed of four major components:
+- Store front; composed of Shopping.html and Shopping.js
+- Shopping cart; composed of Cart.html and Cart.js
+- Backend express app and server; composed of app.js
+- Inventory; composed of inventory.json
+
+### Logic
+app.js loads the inventory.json file into memory at runtime.  All changes made to the inventory are persisted only to memory, and are never saved back to the file.
+
+The store front (shopping.html) allows you to add items to your cart.  When you attempt to add an item to your cart, the sum of the requested quantity and the quantity of that item in your cart is checked against the available inventory.  If you are requesting too many of the item, none are added to your cart and an error message is displayed.  If you request an available number of items, the requested quantity of the itme is added to the item in the cart stored in your session cookie.
+
+The cart loads the quantity of each item in your cart from your session cookie, and displays the totals.  If you modify the numbers on the cart page, it sets the quantity in your cart (session cookie) to match.
+
+When the 'checkout' button is pressed, the quantity of items in your cart (session cookie cart object) is subtracted from the 'inventory' object stored in-memory on the backend express app, and the values in your session cookie cart are cleared.
