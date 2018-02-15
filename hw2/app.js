@@ -46,6 +46,7 @@ app.get('/', (req, res, next) => {
     return next();
 });
 
+//currently unused
 app.get('/update/:itemid/:ammount', (req, res, next) => {
     inventory['Inventory'][req.params.itemid]['quantityInStock'] = inventory['Inventory'][req.params.itemid]['quantityInStock'] - req.params.ammount;
     console.log(inventory);
@@ -65,7 +66,6 @@ app.post('/saveCart', (req, res, next) => {
                 errorList.push(key);
             }
             else {
-                //inventory['Inventory'][key]['quantityInStock'] -= quantity;
                 req.session.cart[key] = (parseInt(quantity)).toString();
                 console.log(key + " " + stock);
                 successList.push(key);
@@ -88,15 +88,14 @@ app.post('/modifyCart', (req, res, next) => {
     let successList = [];
     for (var key in req.body){
         let stock = inventory['Inventory'][key]['quantityInStock'];
+        //rather than adding to the existing quantity (like in /saveCart) we are instead setting the quantity to the ammount
         let quantity = req.body[key];
-        //let diff = (quantity - parseInt(req.session.cart[key]));
 
         if (stock - quantity < 0){
             console.log("ERROR");
             errorList.push(key);
         }
         else {
-            //inventory['Inventory'][key]['quantityInStock'] -= diff;
             req.session.cart[key] = (quantity).toString();
             successList.push(key);
         };
@@ -126,6 +125,7 @@ app.post('/checkout', (req, res, next) => {
                 errorList.push(key);
             }
             else {
+                //Here we actually modify the inventory object, rather than just comparing against it as in the previous functions
                 inventory['Inventory'][key]['quantityInStock'] -= quantity;
                 req.session.cart[key] = 0;
                 successList.push(key);
@@ -143,7 +143,7 @@ app.get('/inventory', (req, res, next) => {
     res.send(inventory);
 });
 
-//Set an empty car up for sessions without a cart
+//Set an empty cart up for sessions without a cart
 app.post('/setCart', (req, res, next) => {
     try {
         console.log(req.session.cart["item1"]);

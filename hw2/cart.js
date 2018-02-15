@@ -4,6 +4,7 @@ function json(response){
 
 $(document).ready(()=>{
 
+    //Without this, the session does not persist across ajax requests, making the cookie useless
     $.ajaxSetup({
         xhrFields: {
           withCredentials: true
@@ -58,7 +59,7 @@ $(document).ready(()=>{
         });
     });
     
-    //The following two click events/functions are very redundant, prime for refactoring into a reusable function or object
+    //The following two click events/functions are very redundant, prime for refactoring into a reusable function
 
     $("#updateCart").click(()=>{
         let item1 = $("#item1_input").val()
@@ -108,7 +109,7 @@ $(document).ready(()=>{
             if (data['failedToPurchase']){
                 alert("Failed to Purchase the following items: \n"+ errors +"\nNot enough in stock!");
             };
-            window.location.href = './Final.html';
+            window.location.href = './thanks.html';
         });
     });
 
